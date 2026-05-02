@@ -1,0 +1,50 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# SILTA — dati utente (mai nel repo)
+~/.silta/
+.silta/
+config.json
+config.conf
+*.json.gz
+sessions/
+snapshots/
+
+# API keys e segreti — mai nel repo
+.env
+.env.*
+secrets.txt
+apikey*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log
+*.log
+error.log
+
+# Test temporanei
+test_*.py
+scratch/
+tmp/
