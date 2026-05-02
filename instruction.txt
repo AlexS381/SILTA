@@ -1,0 +1,64 @@
+⚙️ Usage Instructions
+
+== Requirements ==
+
+Before running SILTA, make sure you have Python 3.10+ installed.
+
+Check your version:
+  python3 --version
+
+If not installed, run ONE of the following depending on your distro:
+
+  Ubuntu / Debian / Mint:
+    sudo apt install python3 python3-venv python3-pip
+
+  Fedora:
+    sudo dnf install python3 python3-pip
+
+  Arch:
+    sudo pacman -S python python-pip
+
+
+== Running SILTA ==
+
+Step 1 — Make the script executable (first time only):
+  chmod +x start_test.sh
+
+Step 2 — Start SILTA:
+  ./start_test.sh
+
+The script will:
+  - Create a Python virtual environment in ./venv/
+  - Install all dependencies from requirements.txt
+  - Start the bridge on http://localhost:7842
+  - Open your browser automatically
+
+On subsequent runs, just type:
+  ./start_test.sh
+
+
+== Stopping SILTA ==
+
+Press Ctrl+C in the terminal.
+The virtual environment is automatically removed on exit.
+This ensures a clean fresh start every time you run the script.
+
+
+== First configuration ==
+
+1. Open http://localhost:7842 in your browser
+2. Go to the Config tab
+3. Add your AI provider:
+   - Cloud: paste your API key (Anthropic or OpenAI)
+   - Local: Ollama or LM Studio are auto-detected if already running
+4. Start chatting
+*(tested with LM Studio 0.4.12 on Linux — local AI)*
+
+== Port conflict ==
+
+SILTA runs on port 7842 by default.
+If that port is already in use, edit this file:
+  ~/.silta/config.conf
+Change the line:
+  PORT=7842
+to any free port, then restart SILTA.
